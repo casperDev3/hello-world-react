@@ -22,7 +22,7 @@ function App() {
   const sortPosts = (sort) => {
     setSelectedSort(sort);
     setPost([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
-  }
+  };
 
   return (
     <div className="App">
