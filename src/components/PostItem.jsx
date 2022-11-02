@@ -9,7 +9,7 @@ const StyleCss = (props) => {
           <div>{props.post.body}</div>
         </div>
         <div className="post__btns">
-          <button onClick={()=> props.remove(props.post)}>Remove</button>
+          <button className="btn btn-danger" onClick={()=> props.remove(props.post)}>Remove</button>
         </div>
       </div>
     </div>

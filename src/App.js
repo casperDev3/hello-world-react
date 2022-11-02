@@ -1,18 +1,19 @@
 import React, { useState } from "react";
+import "./styles/App.css";
 import PostsList from "./components/PostsList";
 import PostForm from "./components/PostForm";
 import MySelect from "./components/UI/select/MySelect";
 
 function App() {
   const [posts, setPost] = useState([
-    { id: 1, title: "js", body: "Some decription" },
-    { id: 2, title: "jsx", body: "Some decription" },
-    { id: 3, title: "JS", body: "Some decription" },
+    { id: 1, title: "JS", body: "Some decription JS" },
+    { id: 2, title: "Python", body: "Some decription Python" },
+    { id: 3, title: "PHP", body: "Some decription PHP" },
   ]);
   const [selectedSort, setSelectedSort] = useState("");
 
   const createPost = (newPost) => {
-    setPost([...posts, newPost]);
+    setPost([newPost, ...posts]);
   };
 
   const removePost = (post) => {
@@ -26,6 +27,14 @@ function App() {
 
   return (
     <div className="App">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 mb-5 mt-3 d-flex justify-content-center">
+            <img src={require("./img/react_logo.gif")} alt="logo" />
+          </div>
+        </div>
+      </div>
+
       <PostForm create={createPost} />
       <hr style={{ margin: "15px 0" }} />
       <div>

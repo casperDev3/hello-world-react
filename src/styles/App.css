@@ -12,11 +12,15 @@
 .App{
     width: 800px;
 }
+.App img{
+    height: 120px;
+}
 
 .post{
     display: flex;
     padding: 15px;
-    border: 2px solid teal;
+    border-radius: 8px;
+    border: 2px solid rgb(148, 210, 210);
     margin-top: 15px;
     justify-content: space-between;
     align-items: center;
