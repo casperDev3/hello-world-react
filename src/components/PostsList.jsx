@@ -9,7 +9,7 @@ const PostsList = ({ posts, title, remove }) => {
   }
 
   return (
-    <div>
+    <div className="mt-4">
       <h1
         style={{
           textAlign: "center",

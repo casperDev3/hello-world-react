@@ -5,7 +5,7 @@ import MyInput from "./UI/input/MyInput";
 const PostFilter = ({filter, setFilter}) => {
 
   return (
-    <div>
+    <div className='d-flex'>
         <MyInput
           value={filter.query}
           onChange={(e) => setFilter({...filter, query: e.target.value})}

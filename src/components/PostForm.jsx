@@ -26,9 +26,11 @@ export default function PostForm({ create, reject }) {
         onChange={(e) => setTitle(e.target.value)}
         type="text"
         placeholder="Title post"
+        className="mb-2 w-100 p-1"
       />
       <MyInput
         value={body}
+        className="w-100 p-1"
         onChange={(e) => setBody(e.target.value)}
         type="text"
         placeholder="Description post"
