@@ -6,8 +6,10 @@ const navBar = () => {
     <nav>
         <Link to={'/about'}>About</Link>
         <Link to={'/posts'}>Post</Link>
+        <Link to={'/student'}>Sudent Page</Link>
       </nav>
   )
 }
+
 
 export default navBar
