@@ -1,11 +1,12 @@
 import React from "react";
 
-const PostCards = () => {
+const PostCards = ({post}) => {
+    const {title, body} = post;
   return (
-    <div className="card">
+    <div className="card m-3">
       <div className="card-body">
-        <h5 className="card-title">Test</h5>
-        <p className="card-text">test body</p>
+        <h5 style={{color: "#f00", textTransform: "capitalize"}} className="card-title">{title}</h5>
+        <p className="card-text">{body}</p>
       </div>
     </div>
   );

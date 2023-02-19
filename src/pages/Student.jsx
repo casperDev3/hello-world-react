@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/StudentPage.module.css";
 import PostCard from "../components/PostCards";
 
 const Student = () => {
   //1. Create a state variable to store the posts
   let [posts, setPosts] = useState([]);
+  let [loading, setLoading] = useState(false);
+  
+  // On mount, fetch the posts
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  // Log the loading state
+  useEffect(() => {
+    console.log("Loading: ", loading);
+  }, [loading]);
+
+
   //2. Create a function to fetch the posts from the API
   async function getPosts() {
+    setLoading(true);
     const DATA = await fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then((data) => {
+        setLoading(false);
         return data;
       });
     //3. Set the posts state variable to the data
@@ -31,25 +46,18 @@ const Student = () => {
         </div>
       </div>
       <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div onClick={getPosts} className="btn btn-warning">
-                Show Posts
-              </div>
-            </div>
+        <div className="container">      
             <div className="row">
               <div className="col-12">
                 {/* Display posts */}
                 {posts.map((post) => {
                   return (
-                    <PostCard key={post.id}/>
+                    <PostCard post={post} key={post.id}/>
                   );
                 })}
               </div>
             </div>
           </div>
-        </div>
       </section>
     </>
   );
