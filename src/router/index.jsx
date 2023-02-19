@@ -12,6 +12,7 @@ const RouterApp = () => {
       <Route path="/about" element={<About />}></Route>
       <Route path="/student" element={<StudentPage />}></Route>
       <Route exact path="/posts" element={<Posts />}></Route>
+      <Route path="/" element={<StudentPage />}></Route>
     </Routes>
   );
 };
